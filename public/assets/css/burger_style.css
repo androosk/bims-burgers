@@ -1,0 +1,38 @@
+body {
+  background-color: #fff200;
+}
+.jumbotron {
+  border-radius: 20px;
+  border: 4px solid saddlebrown;
+  margin-top:20px;
+}
+.bim-pic {
+  float: right;
+  margin-top: -30px;
+  border-radius: 20px;
+}
+.current-burger {
+  border: 4px solid saddlebrown;
+  border-radius: 20px;
+  background-color: salmon;
+  font-size: 20px;
+  color: saddlebrown;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.devoured {
+  background-color: lightgray;
+  color: black;
+  text-decoration: line-through;
+}
+.h3 {
+  text-decoration: none;
+}
+.burger-img {
+  margin-right: 5px;
+}
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
