@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-1">Bim's Burger Stand!<span><img src="/assets/img/bim.png" class="bim-pic" height="225" width="150" alt="bimmy"></span></h1>
+    <h4>Bim is a classic girl that loves a good burger. She's happy to cook up whatever you want. Just let her know!</h4>
+  </div>
+
+  <div class="row">
+    {{!-- Menu of available burgers --}}
+    <div class="col-6 current-burger">
+      <h3 class="text-center">TODAY'S MENU ITEMS</h3>
+      {{#each burgers}}{{#unless this.devoured}}
+          <form class="form-inline" action="/{{this.id}}?_method=PUT" method="POST">
+          <img src="/assets/img/burger.png" class="burger-img" height="40" width="40" alt="burger">{{burger_name}}
+          <button type="submit" class="btn btn-success">Devour It!</button>
+          </form>
+      {{/unless}}{{/each}}
+    </div>
+    {{!-- Menu of devoured burgers --}}
+    <div class="col-6 current-burger devoured">
+      <h3 class="text-center h3">DEVOURED ITEMS</h3>
+      {{#each burgers}}{{#if this.devoured}}
+        <div>
+          <h4><span><img src="/assets/img/bwburger.png" class="burger-img" height="40" width="40" alt="burger"></span>{{burger_name}}</h4>
+        </div>
+      {{/if}}{{/each}}
+    </div>
+  </div>
+{{!-- Input to order a tasty burger --}}
+<div class="row">
+<div class="col-12 text-center">
+  <h2>Order A Tasty Burger!</h2>
+    <form action="/" method="POST">
+      <input type="text" id="name" name="burger_name" placeholder="Tasty Burger Name Here">
+      <button type="submit" class="btn btn-success">Order The Burger</button>
+    </form>
+  </div>
+</div>
