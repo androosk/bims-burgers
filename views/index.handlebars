@@ -8,14 +8,20 @@
     {{!-- Menu of available burgers --}}
     <div class="col-6 current-burger">
       <h3 class="text-center">TODAY'S MENU ITEMS</h3>
+      {{!-- Eaches over the burgers table, gets burgers where "devoured" is set to false and displays them with a burger icon and --}}
+      {{!-- a "Devour it!" button. If the "Devour it!" button is clicked, that burger's "devoured" setting will be changed to true in the database and --}}
+      {{!-- it will be moved into the Devoured Items menu --}}
       {{#each burgers}}{{#unless this.devoured}}
+      {{!-- In order to get the PUT method to work here, I had to make this a form which made rendering the css properly difficult --}}
+      {{!-- Additionally, after trying a bunch of different ways, I imported an npm package called "method override" to get this to work here  --}}
           <form class="form-inline" action="/{{this.id}}?_method=PUT" method="POST">
           <img src="/assets/img/burger.png" class="burger-img" height="40" width="40" alt="burger">{{burger_name}}
           <button type="submit" class="btn btn-success">Devour It!</button>
           </form>
       {{/unless}}{{/each}}
     </div>
-    {{!-- Menu of devoured burgers --}}
+    {{!-- Menu of devoured burgers. Eaches over the burgers table, gets burgers where "devoured" is set to true and displayes them with strikethrough --}}
+    {{!-- text and a black and white burger icon --}}
     <div class="col-6 current-burger devoured">
       <h3 class="text-center h3">DEVOURED ITEMS</h3>
       {{#each burgers}}{{#if this.devoured}}
@@ -25,7 +31,7 @@
       {{/if}}{{/each}}
     </div>
   </div>
-{{!-- Input to order a tasty burger --}}
+{{!-- Input to order a tasty burger. Adds the input burger to the burgers table in the database. --}}
 <div class="row">
 <div class="col-12 text-center">
   <h2>Order A Tasty Burger!</h2>
