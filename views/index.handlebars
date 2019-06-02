@@ -4,9 +4,9 @@
     <h4>Bim is a classic girl that loves a good burger. She's happy to cook up whatever you want. Just let her know!</h4>
   </div>
 
-  <div class="row">
+  <div>
     {{!-- Menu of available burgers --}}
-    <div class="col-6 current-burger">
+    <div class="current-burger">
       <h3 class="text-center">TODAY'S MENU ITEMS</h3>
       {{!-- Eaches over the burgers table, gets burgers where "devoured" is set to false and displays them with a burger icon and --}}
       {{!-- a "Devour it!" button. If the "Devour it!" button is clicked, that burger's "devoured" setting will be changed to true in the database and --}}
@@ -20,9 +20,10 @@
           </form>
       {{/unless}}{{/each}}
     </div>
+    {{!-- <div class="col-1"></div> --}}
     {{!-- Menu of devoured burgers. Eaches over the burgers table, gets burgers where "devoured" is set to true and displayes them with strikethrough --}}
     {{!-- text and a black and white burger icon --}}
-    <div class="col-6 current-burger devoured">
+    <div class="current-burger devoured">
       <h3 class="text-center h3">DEVOURED ITEMS</h3>
       {{#each burgers}}{{#if this.devoured}}
         <div>
@@ -34,7 +35,7 @@
 {{!-- Input to order a tasty burger. Adds the input burger to the burgers table in the database. --}}
 <div class="row">
 <div class="col-12 text-center">
-  <h2>Order A Tasty Burger!</h2>
+  <h2 class="text-white">Order A Tasty Burger!</h2>
     <form action="/" method="POST">
       <input type="text" id="name" name="burger_name" placeholder="Tasty Burger Name Here">
       <button type="submit" class="btn btn-success">Order The Burger</button>

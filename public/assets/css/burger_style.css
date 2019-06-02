@@ -1,4 +1,6 @@
 body {
+  background-image: url("/assets/img/food-1081707_1920.jpg");
+  background-size: cover;
   background-color: #fff200;
 }
 .jumbotron {
@@ -20,6 +22,8 @@ body {
   margin-bottom: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+  width: 48%;
+  display: inline-block;
 }
 .devoured {
   background-color: lightgray;
