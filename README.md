@@ -15,7 +15,7 @@ to do the following:
 - NPM Method-Override
 - MVC (Model/View/Controller)
 
-## Fork the repo
+## Clone the repo
 - Run NPM Install
 - Configure local server settings for database
 - Run MySQL CLI inside db folder to install schema and seed data
