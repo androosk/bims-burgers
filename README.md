@@ -1,24 +1,43 @@
 # Bim's Burger Stand
-Bim's Burger Stand is a basic Create, Read and Update (no Delete route) app that allows the user
-to do the following:
-- Order a burger via the input box
-- The burger is Created in the MySQL database
-- The burger appears in Today's Menu Items (Read) with a Devour button
-- User may select Devour which updates the burger's status to devoured
-- Burger appears in the Devoured Items menu (Update)
+![Screenshot](screenshot.png)
+Bim's Burger Stand is a fun web application where users can order a burger via the input box and devour that burger by clicking the Devour It! button. The burger is added to the MySQL database, appears in Today's Menu Items and moves to the DEVOURED ITEMS menu after the user clicks the devour button
 
 ## Frameworks
 - Node.js
 - Express
 - MySQL
 - Handlebars Templating Engine
-- NPM Method-Override
-- MVC (Model/View/Controller)
+- NPM Method-Override to allow DOM manipulation in places where this is normally not allowed
+- MVC (Model/View/Controller) method
 
-## Clone the repo
-- Run NPM Install
-- Configure local server settings for database
-- Run MySQL CLI inside db folder to install schema and seed data
+## To run Bim's Burgers on your local machine open the CLI of your choice
+### Clone to your local computer :octocat:
+```sh
+$ git clone https://github.com/androosk/bims-burgers.git
+```
+### Install NPM Dependencies
+```sh
+$ cd bims-burgers
+```
+```sh
+$ npm install
+```
+### Install Schema and Seed Data
+```sh
+$ cd db
+$ mysql -u USERNAME -p
+> [enter password]
+> source schema.sql
+> source seeds.sql
+> exit
+$ cd ..
+``` 
+### Run Project
+```sh
+$ npm run server
+```
+### In your web browser go to address localhost:3000
 
-## Find Bim's Burger Stand deployed on Heroku at
+## Deployment Link :link:
+This app is deployed to Heriku at
 https://bimsburgers.herokuapp.com/
